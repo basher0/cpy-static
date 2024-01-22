@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title>Comandos JailBreak</title>
+    <style>
+    body{font-family:Arial,sans-serif;background-color:#f2f2f2;margin:0;padding:20px}
+    .container{max-width:800px;margin:0 auto;background-color:#fff;box-shadow:0 4px 8px rgba(0,0,0,.1);border-radius:8px;padding:20px}
+    h1{text-align:center}
+    .command-list{list-style-type:none;padding:0}
+    .command-list li{margin-bottom:10px;border-left:5px solid #007bff;padding-left:10px;background-color:#f7f7f7;box-shadow:0 2px 4px rgba(0,0,0,.1);border-radius:4px}
+    .command-list li span{color:#007bff;font-weight:bold}
+    .footer{text-align:center;margin-top:30px;color:#999}
+    </style>
+</head>
+<body>
+    <div class='container'>
+    <h1>Comandos para todos</h1>
+    <ul class='command-list'>
+        <li><span>/loja</span> - Loja de itens.</li>
+        <li><span>/inv</span> - Inventário de fantasias e itens.</li>
+        <li><span>/titulos</span> - Menu de títulos personalizados.</li>
+        <li><span>/doar</span> - Doar dinheiro ou moedas.</li>
+        <li><span>/travado</span> - Tentar se destravar.</li>
+    </ul>
+    </div>
+    <div class='container'>
+    <h1>Comandos para guardas</h1>
+    <ul class='command-list'>
+        <li><span>/gm</span> - Menu de guarda.</li>
+        <li><span>/rv</span> - Reviver jogador morto.</li>
+        <li><span>/fd</span> - Dar ou remover freeday.</li>
+    </ul>
+    </div>
+    <div class='footer'>
+    <p>© 2023 <span id="paramPlaceholder">None</span>. Todos os direitos reservados.</p>
+    </div>
+</body>
+<script>
+    // Function to get parameter from URL
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Get the parameter value
+    var brandNameValue = getParameterByName('Clan');
+
+    // Update the content of the span element with the parameter value
+    var paramPlaceholderElement = document.getElementById('paramPlaceholder');
+    if (paramPlaceholderElement) {
+        paramPlaceholderElement.textContent = brandNameValue;
+    }
+</script>
+</html>
